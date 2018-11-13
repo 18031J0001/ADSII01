@@ -1,0 +1,15 @@
+[master 47c24d7] "ads2_m1_a1_1: 7/8 testcases passed. Cannot run hidden testcases as Server is unreachablecheck_style score: 0/1 "
+ 14 files changed, 533 insertions(+), 595 deletions(-)
+ rewrite 1.1 Graph/Bag$ListIterator.class (69%)
+ rewrite 1.1 Graph/Bag$Node.class (100%)
+ rewrite 1.1 Graph/Bag.class (83%)
+ rewrite 1.1 Graph/Bag.java (86%)
+ delete mode 100644 1.1 Graph/Graph.java
+ create mode 100644 1.1 Graph/Graphlist.class
+ create mode 100644 1.1 Graph/Graphmatrix.class
+ delete mode 100644 1.1 Graph/In.java
+ rewrite 1.1 Graph/Solution.class (100%)
+ rewrite 1.1 Graph/Solution.java (96%)
+ rewrite 1.1 Graph/result/score.json (81%)
+remote: Permission to 18031J0001/ADSII01.git denied to ramidisowmya595.
+fatal: unable to access 'https://github.com/18031J0001/ADSII01.git/': The requested URL returned error: 403
