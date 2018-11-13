@@ -104,9 +104,9 @@ public class GraphImplement implements Graph
                  }
             }
         	else if(this.type.equals("Matrix")) {
-        		Matrix =new int[V][V];
+        		 Matrix =new int[V][V];
         		 int E = in.readInt();
-                 
+        		
                  keys=in.Strineline().split(",");
         		 if (E < 0) throw new IllegalArgumentException("number of edges in a Graph must be nonnegative");
                  for (int i = 0; i < E; i++) {
@@ -162,17 +162,20 @@ public class GraphImplement implements Graph
     public void addEdge(int v, int w) {
         validateVertex(v);
         validateVertex(w);
-        E++;
-        if(this.type.equals("List")) {
+       
+        if(V>1 && this.type.equals("List")) 
+        {
         adj[v].add(w);
         adj[w].add(v);
+        E++;
         }
         
-        else if(this.type.equals("Matrix")) 
+        else if(V>1 && this.type.equals("Matrix")) 
         {
         	//System.out.println("v"+v+": w"+w);
         	Matrix[v][w]=1;
         	Matrix[w][v]=1;
+        	E++;
         }
         
     }
@@ -212,8 +215,14 @@ public class GraphImplement implements Graph
     public String toString() {
         StringBuilder s = new StringBuilder();
         //String keys[]=in.Strineline().split(",");
+        if(V<=1) {
+        	s.append(V + " vertices, " + E + " edges " + NEWLINE);	
+        	s.append("No edges");
+        	return s.toString();
+        }else {
+        	s.append(V + " vertices, " + E + " edges " + NEWLINE);
+        }
         
-        s.append(V + " vertices, " + E + " edges " + NEWLINE);
         if(this.type.equals("List")) {
         for (int v = 0; v < V; v++) 
         {
@@ -226,10 +235,11 @@ public class GraphImplement implements Graph
         }
         else
         {
+        	System.out.println("E--->"+E);
         	for (int v = 0; v < V; v++) 
             {
                 //s.append(keys[v] + ": ");
-                for (int e = 0; e < E; e++) {
+                for (int e = 0; e < Matrix.length; e++) {
                     s.append(Matrix[v][e] + " ");
                 }
                 s.append(NEWLINE);
