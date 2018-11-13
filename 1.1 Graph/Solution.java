@@ -27,7 +27,7 @@ import java.util.Scanner;
  *  @author Robert Sedgewick
  *  @author Kevin Wayne
  */
-public class GraphImplement implements Graph
+public class Solution implements Graph
 {
     private static final String NEWLINE = System.getProperty("line.separator");
 
@@ -68,7 +68,7 @@ public class GraphImplement implements Graph
      * @throws IllegalArgumentException if the number of vertices or edges is negative
      * @throws IllegalArgumentException if the input stream is in the wrong format
      */
-    public GraphImplement(In in,String temp) {
+    public Solution(In in,String temp) {
     	 this.V = in.readInt();
     	 //int E = in.readInt();
     	 //keys=in.Strineline().split(",");
@@ -261,7 +261,7 @@ public class GraphImplement implements Graph
     	In in = new In(sc);
     	
     	   		
-            GraphImplement G = new GraphImplement(in,temp);
+            Solution G = new Solution(in,temp);
             System.out.println(G);
     
     }
